@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
-import DivContainer from '../div.js';
+import DivContainer from '../../../components/DivContainer';
 
 function CadastroVideo() {
     return (
