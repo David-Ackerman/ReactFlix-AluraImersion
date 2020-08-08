@@ -4,46 +4,41 @@ import PageDefault from '../../../components/PageDefault';
 import DivContainer from '../../../components/DivContainer';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm.js';
 
 
 function CadastroCategoria() {
     const [categorias, setCategorias] = useState([]);
 
     const initialValues = {
-        nome: '',
+        titulo: '',
         descricao: '',
         cor: '',
     };
 
-    const [values, setValues] = useState(initialValues);
+    const { funcaoSet, values, clearForm} = useForm(initialValues);
 
-    function setValue(chave, valor) {
-        setValues({
-            ...values,
-            [chave]: valor,
-        });
-    }
-    function funcaoSet(infoValue) {
-        setValue(infoValue.target.getAttribute('name'), infoValue.target.value);
-    }
     useEffect(() => {
-        const Url = 'http://localhost:8080/categorias'
-        fetch(Url)
-            .then(async (respostaServer) =>{
-                const resposta = await respostaServer.json();
-                setCategorias([
-                    ...resposta,
-                ]);
-            });    
-        
+        if(window.location.href.includes('localhost')) {
+            const URL = 'http://localhost:8080/categorias'; 
+            fetch(URL)
+             .then(async (respostaDoServer) =>{
+                if(respostaDoServer.ok) {
+                    const resposta = await respostaDoServer.json();
+                    setCategorias(resposta);
+                    return; 
+                }
+              throw new Error('Não foi possível pegar os dados');
+            })
+        } 
     }, []);
 
     return (
         <PageDefault>
             <DivContainer>
                 <h1>
-                    Cdastro de Categoria:
-                    {values.nome}
+                    Cdastro de Categoria:{' '}
+                    {values.titulo}
                 </h1>
 
                 <form onSubmit={function handleSubmit(infosEventos) {
@@ -52,13 +47,13 @@ function CadastroCategoria() {
                         ...categorias,
                         values,
                     ]);
-                    setValues(initialValues);
+                    clearForm();
                 }}>
                     <FormField
-                        label="Nome da Categoria: "
+                        label="Titulo da Categoria:"
                         type="text"
-                        name="nome"
-                        value={values.nome}
+                        name="titulo"
+                        value={values.titulo}
                         onChange={funcaoSet}
                     />
                     <FormField
@@ -75,13 +70,13 @@ function CadastroCategoria() {
                 </form>
                 {categorias.lenght === 0 && (
                     <div>
-                        Carregando...
+                        Loading...
                     </div>
                 )}
                 <ul>
                     {categorias.map((categoria) => (
-                        <li key={categoria}>
-                            {categoria.nome}
+                        <li key={categoria.id}>
+                            {categoria.titulo}
                         </li>
                     ))}
                 </ul>
