@@ -5,8 +5,26 @@
       "titulo": "Front End",
       "cor": "#6BD1FF",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "",
+        "url": ""
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Back End",
+      "cor": "#32E8FF",
+      "link_extra": {
+        "text": "",
+        "url": ""
+      }
+    },
+    {
+      "id": 3,
+      "titulo": "Jogos",
+      "cor": "#6B2112",
+      "link_extra": {
+        "text": "",
+        "url": ""
       }
     }
   ],
@@ -16,6 +34,47 @@
       "categoriaId": 1,
       "titulo": "SEO com React",
       "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+    },
+    {
+      "id": 2,
+      "categoriaId": 3,
+      "titulo": "Final Fantasy 7",
+      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Recriando interface do Github com ReactJS | UI Clone",
+      "url": "https://www.youtube.com/watch?v=iLEbGQXsg3k"
+    },
+    {
+      "id": 4,
+      "categoriaId": 2,
+      "titulo": "Prisma 2: Automatize o acesso ao banco de dados | Code/Drops #29",
+      "url": "https://www.youtube.com/watch?v=2iS3SHwft0k"
+    },
+    {
+      "id": 5,
+      "categoriaId": 2,
+      "titulo": "SQL no Node.js com Knex.js | Masterclass #13",
+      "url": "https://www.youtube.com/watch?v=U7GjS3FuSkA"
+    },
+    {
+      "id": 6,
+      "categoriaId": 1,
+      "titulo": "Tema light/dark com React, Styled Components e TypeScript | Code/Drops #16",
+      "url": "https://www.youtube.com/watch?v=ngVU74daJ8Y"
+    },
+    {
+      "id": 7,
+      "categoriaId": 3,
+      "titulo": "The Last of Us Part II – Official Extended Commercial | PS4",
+      "url": "https://www.youtube.com/watch?v=TXl9GI1p_Os"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=V3QGW2PgKKY&t=27s",
+      "categoriaId": 1,
+      "id": 8
     }
   ]
 }

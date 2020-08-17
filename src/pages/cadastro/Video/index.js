@@ -12,9 +12,9 @@ function CadastroVideo() {
     const history = useHistory();
     const [categorias, setCategorias] = useState();
     const {funcaoSet, values } = useForm({
-        titulo: 'videoPadrao',
-        url: 'https://www.youtube.com/watch?v=sEE-3P9kKyE',
-        categoria: 'Front End'
+        titulo: '',
+        url: '',
+        categoria: ''
     });
 
     useEffect(() => {
@@ -67,7 +67,7 @@ function CadastroVideo() {
                         Cadastrar
                     </Button>
                 </form>
-
+                <br />
                 <Link to="/cadastro/categoria">
                     Cadastrar Categoria
                 </Link>
